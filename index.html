@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+Put your HTML text herea<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -960,6 +960,7 @@
                 <a href="#proteger">Como Proteger</a>
                 <a href="#nunca">Nunca Faça</a>
                 <a href="#sinais">Sinais</a>
+                v\<a href="#dica-fundamental" style="color: var(--accent-yellow); font-weight: 800;">✨ Dica Fundamental</a>
                 <a href="#investigar">Investigar</a>
                 <a href="#emergencia" style="color: #ff4d4d;">E Agora?</a>
             </nav>
@@ -968,21 +969,27 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-badge">🚨 ATENÇÃO: Não seja a próxima vítima</div>
-            <h1>
-                O golpe da chantagem começa com uma conversa <span class="highlight">inocente</span>.
-            </h1>
-            <p class="hero-lead">
-                Em pouco tempo você está em uma chantagem que pode destruir sua vida, seu relacionamento e seu emprego. Entenda o padrão deles e <strong>saiba como se defender.</strong>
-            </p>
-            <div class="hero-cta-group">
-                <button class="cta-button" onclick="document.getElementById('alerta').scrollIntoView()">
+        <div class="hero-cta-group" style="display: flex; flex-direction: column; align-items: center; gap: 20px; width: 100%; max-width: 500px; margin: 0 auto;">
+                <!-- Botão Principal (Mantido limpo) -->
+                <button class="cta-button" style="width: 100%;" onclick="document.getElementById('alerta').scrollIntoView({behavior: 'smooth'})">
                     Aprender a me Proteger
                 </button>
-                <span class="hero-note">Leitura de 3 minutos que pode salvar sua reputação.</span>
+                
+                <!-- O ATALHO EM FORMATO DE LINK/CARD MINIMALISTA -->
+                <div onclick="document.getElementById('dica-fundamental').scrollIntoView({behavior: 'smooth'})" 
+                     style="width: 100%; padding: 14px; background: rgba(255, 215, 10, 0.03); border: 1px dashed rgba(255, 215, 10, 0.3); border-radius: 8px; cursor: pointer; transition: all 0.3s ease; text-align: center;"
+                     onmouseover="this.style.background='rgba(255, 215, 10, 0.08)'; this.style.borderColor='var(--accent-yellow)';"
+                     onmouseout="this.style.background='rgba(255, 215, 10, 0.03)'; this.style.borderColor='rgba(255, 215, 10, 0.3)';">
+                    
+                    <span style="color: var(--accent-yellow); font-weight: 700; font-size: 15px; display: block; line-height: 1.4; margin-bottom: 4px;">
+                        🎯 Sem tempo para ler? Veja aqui apenas uma dica que te coloca no controle da situação
+                    </span>
+                    
+                    <span style="color: var(--text-secondary); font-size: 12px; font-weight: 500; opacity: 0.8;">
+                        (Leitura de menos de um minuto)
+                    </span>
+                </div>
             </div>
-        </div>
     </section>
 
     <!-- Alerta Real -->
@@ -1439,6 +1446,64 @@
     </section>
 
     <!-- Como Investigar -->
+     <!-- DICA DE OURO EM DESTAQUE MÁXIMO -->
+    <!-- DICA DE OURO EM DESTAQUE MÁXIMO -->
+    <section id="dica-fundamental" class="section" style="background: #111a36; border-top: 3px solid var(--accent-yellow); border-bottom: 3px solid var(--accent-yellow);">
+        <div class="container">
+            <div class="reveal" style="background: linear-gradient(135deg, rgba(255, 215, 10, 0.1) 0%, rgba(255, 77, 77, 0.05) 100%); border: 3px solid var(--accent-yellow); padding: clamp(20px, 5vw, 40px); border-radius: 16px; box-shadow: 0 0 30px rgba(255, 215, 10, 0.15);">
+                
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;">
+                    <span style="font-size: 32px;">👑</span>
+                    <h2 style="font-size: clamp(24px, 4vw, 36px); font-weight: 900; color: var(--accent-yellow); margin: 0; line-height: 1.2;">
+                        A Dica Fundamental para não cair em Golpes
+                    </h2>
+                </div>
+                
+                <p style="font-size: 18px; color: var(--text-primary); margin-bottom: 24px; font-weight: 600; line-height: 1.6;">
+                    Caso você não tenha identificado se é golpista, ou se você já está na conversa e não quis parar para pensar sobre isso agora, essa fala abaixo é <strong>fundamental</strong>. 
+                    <br><span style="color: #ff6b6b;">Apenas copie e mande isso antes de passar seu número, @user ou foto:</span>
+                </p>
+
+                <!-- Bloco de Copiar (COM A SUA ALTERAÇÃO NOVA) -->
+                <div style="background: var(--bg-main); padding: 24px; border-radius: 8px; border-left: 6px solid var(--accent-yellow); margin-bottom: 28px; box-shadow: inset 0 2px 8px rgba(0,0,0,0.5);">
+                    <p style="font-size: clamp(16px, 2.5vw, 19px); color: var(--text-primary); font-style: italic; line-height: 1.8; margin: 0;">
+                        "Por questão de segurança para nos dois, eu não compartilho meu número de telefone, não mostro o rosto em câmera/fotos e mantenho meu perfil totalmente anônimo. Eu conheço muito sobre golpes na internet e prefiro que a gente crie um laço real e confie um no outro antes de qualquer exposição. Combinado?"
+                    </p>
+                </div>
+
+                <h3 style="color: #ff4d4d; font-size: 20px; margin-bottom: 16px; font-weight: 800;">
+                    ⚡ O Teste Prático (A reação deles entrega o golpe):
+                </h3>
+                
+                <p style="color: var(--text-secondary); font-size: 16px; margin-bottom: 16px; line-height: 1.7;">
+                    Esse teste foi feito na prática. Quando você manda essa mensagem, 100% dos golpistas reagem de duas formas porque você quebra o script deles:
+                </p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                    <div style="background: rgba(10, 14, 39, 0.5); padding: 20px; border-radius: 8px; border: 1px solid rgba(255, 77, 77, 0.2);">
+                        <h4 style="color: #ff6b6b; margin-bottom: 8px; font-size: 17px; font-weight: 700;">❌ Para de Responder</h4>
+                        <p style="color: var(--text-secondary); font-size: 15px; margin: 0; line-height: 1.6;">
+                            A pessoa simplesmente some do nada. Como o objetivo do golpista é dinheiro rápido e chantagem fácil, se ele vê que você não vai ceder e sabe se proteger, ele desistem para não perder tempo.
+                        </p>
+                    </div>
+                    
+                    <div style="background: rgba(10, 14, 39, 0.5); padding: 20px; border-radius: 8px; border: 1px solid rgba(255, 77, 77, 0.2);">
+                        <h4 style="color: #ff6b6b; margin-bottom: 8px; font-size: 17px; font-weight: 700;">🎭 Finge que está Bravo</h4>
+                        <p style="color: var(--text-secondary); font-size: 15px; margin: 0; line-height: 1.6;">
+                            Eles fingem que ficaram ofendidos, bravos ou dizem que "não era o que esperavam". Não caia nessa: nós sabemos que isso são apenas argumentos de golpista para tentar fazer você se sentir culpado e te forçar a ceder.
+                        </p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 24px; background: rgba(81, 207, 102, 0.1); padding: 16px; border-radius: 8px; border-left: 4px solid #51cf66;">
+                    <p style="color: #51cf66; font-size: 15px; font-weight: 700; margin: 0; line-height: 1.6;">
+                        🟢 SE A PERSONA SUMIU OU FICOU BRAVA, É GOLPE. Uma pessoa real e bem-intencionada vai super respeitar sua decisão, vai achar maduro e vai continuar conversando contigo numa boa para criar um laço real.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
     <section id="investigar" class="investigar section">
         <div class="container">
             <h2 class="reveal">
