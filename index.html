@@ -1,4 +1,4 @@
-Put your HTML text herea<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -76,6 +76,7 @@ Put your HTML text herea<!DOCTYPE html>
 
         .section {
             padding: 80px 20px;
+            animation: slideUp 0.8s ease-out;
         }
 
         .highlight {
@@ -304,6 +305,7 @@ Put your HTML text herea<!DOCTYPE html>
             padding: 24px;
             border-radius: 8px;
             transition: all 0.3s ease;
+            animation: slideUp 0.8s ease-out;
         }
 
         .alert-item:hover {
@@ -338,6 +340,7 @@ Put your HTML text herea<!DOCTYPE html>
         .step {
             position: relative;
             padding-left: 60px;
+            animation: slideUp 0.8s ease-out;
         }
 
         .step::before {
@@ -370,14 +373,6 @@ Put your HTML text herea<!DOCTYPE html>
             line-height: 1.8;
         }
 
-        .step img {
-            width: 100%; 
-            margin-top: 16px; 
-            border-radius: 8px; 
-            box-shadow: 0 5px 15px rgba(255, 215, 10, 0.2); 
-            border: 1px solid var(--border-color);
-        }
-
         /* Nunca Faça Isso */
         .nunca-faca {
             background: linear-gradient(135deg, rgba(255, 215, 10, 0.05) 0%, rgba(255, 215, 10, 0.02) 100%);
@@ -397,6 +392,7 @@ Put your HTML text herea<!DOCTYPE html>
             border: 2px solid var(--accent-yellow);
             text-align: center;
             transition: all 0.3s ease;
+            animation: slideUp 0.8s ease-out;
         }
 
         .nunca-item:hover {
@@ -440,6 +436,7 @@ Put your HTML text herea<!DOCTYPE html>
             border-radius: 8px;
             border-left: 4px solid var(--accent-yellow);
             transition: all 0.3s ease;
+            animation: slideUp 0.8s ease-out;
         }
 
         .pattern:hover {
@@ -492,6 +489,7 @@ Put your HTML text herea<!DOCTYPE html>
             padding: 24px;
             border-radius: 8px;
             transition: all 0.3s ease;
+            animation: slideUp 0.8s ease-out;
         }
 
         .sinal:hover {
@@ -544,6 +542,7 @@ Put your HTML text herea<!DOCTYPE html>
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
+            animation: slideUp 0.8s ease-out;
         }
 
         .tool-card:hover {
@@ -610,6 +609,7 @@ Put your HTML text herea<!DOCTYPE html>
             padding: 24px;
             border-radius: 8px;
             transition: all 0.3s ease;
+            animation: slideUp 0.8s ease-out;
         }
 
         .emergency-card:hover {
@@ -656,6 +656,7 @@ Put your HTML text herea<!DOCTYPE html>
             margin-top: 40px;
             box-shadow: 0 15px 40px rgba(10, 14, 39, 0.2);
             text-align: left;
+            animation: slideUp 0.8s ease-out 0.2s backwards;
         }
 
         .share-box h3 {
@@ -736,6 +737,7 @@ Put your HTML text herea<!DOCTYPE html>
             color: var(--text-primary);
             text-align: center;
             padding: 80px 20px;
+            animation: slideUp 0.8s ease-out;
         }
 
         .final-cta h2 {
@@ -789,7 +791,7 @@ Put your HTML text herea<!DOCTYPE html>
 
         .scroll-to-top.show {
             display: flex;
-            animation: fadeIn 0.3s ease-out;
+            animation: slideUp 0.3s ease-out;
         }
 
         .scroll-to-top:hover {
@@ -800,34 +802,28 @@ Put your HTML text herea<!DOCTYPE html>
         /* Responsividade */
         @media (max-width: 768px) {
             .section {
-                padding: 40px 15px; 
+                padding: 40px 20px; /* Reduzido de 60px para 40px no mobile */
             }
 
             .hero {
-                padding: 60px 15px;
+                padding: 60px 20px;
                 min-height: auto;
             }
 
             .hero h1 {
-                font-size: 32px;
+                font-size: 36px;
             }
 
-            .hero-lead {
+            .hero p {
                 font-size: 16px;
-                margin-bottom: 30px;
             }
 
             section h2 {
-                font-size: 28px;
-            }
-
-            section > .container > p:first-of-type {
-                font-size: 16px;
-                margin-bottom: 30px;
+                font-size: 32px;
             }
 
             .hero::before {
-                background: radial-gradient(circle at 50% 50%, rgba(255, 215, 10, 0.05) 0%, transparent 60%);
+                background: radial-gradient(circle at 20% 50%, rgba(255, 215, 10, 0.05) 0%, transparent 50%);
             }
 
             .steps,
@@ -840,7 +836,7 @@ Put your HTML text herea<!DOCTYPE html>
             }
 
             .final-cta {
-                padding: 40px 15px;
+                padding: 40px 20px;
             }
 
             .scroll-to-top {
@@ -849,20 +845,6 @@ Put your HTML text herea<!DOCTYPE html>
                 width: 45px;
                 height: 45px;
                 font-size: 20px;
-            }
-
-            .step {
-                padding-left: 0;
-                padding-top: 60px;
-            }
-
-            .step::before {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-
-            .step h3, .step p {
-                text-align: center;
             }
         }
 
@@ -880,6 +862,7 @@ Put your HTML text herea<!DOCTYPE html>
             padding: 28px;
             border-radius: 8px;
             transition: all 0.3s ease;
+            animation: slideUp 0.8s ease-out;
         }
 
         .privacy-card:hover {
@@ -937,16 +920,14 @@ Put your HTML text herea<!DOCTYPE html>
             box-shadow: 0 0 35px rgba(255, 215, 10, 0.25);
         }
 
-        /* Transições de scroll */
-        .reveal {
+        /* Intersection Observer para animações */
+        .fade-in {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease-out;
+            transition: opacity 0.6s ease-out;
         }
 
-        .reveal.active {
+        .fade-in.visible {
             opacity: 1;
-            transform: translateY(0);
         }
     </style>
 </head>
@@ -960,7 +941,6 @@ Put your HTML text herea<!DOCTYPE html>
                 <a href="#proteger">Como Proteger</a>
                 <a href="#nunca">Nunca Faça</a>
                 <a href="#sinais">Sinais</a>
-                v\<a href="#dica-fundamental" style="color: var(--accent-yellow); font-weight: 800;">✨ Dica Fundamental</a>
                 <a href="#investigar">Investigar</a>
                 <a href="#emergencia" style="color: #ff4d4d;">E Agora?</a>
             </nav>
@@ -969,64 +949,58 @@ Put your HTML text herea<!DOCTYPE html>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-cta-group" style="display: flex; flex-direction: column; align-items: center; gap: 20px; width: 100%; max-width: 500px; margin: 0 auto;">
-                <!-- Botão Principal (Mantido limpo) -->
-                <button class="cta-button" style="width: 100%;" onclick="document.getElementById('alerta').scrollIntoView({behavior: 'smooth'})">
+        <div class="container">
+            <div class="hero-badge">🚨 ATENÇÃO: Não seja a próxima vítima</div>
+            <h1>
+                O golpe da chantagem começa com uma conversa <span class="highlight">inocente</span>.
+            </h1>
+            <p class="hero-lead">
+                Em pouco tempo você está em uma chantagem que pode destruir sua vida, seu relacionamento e seu emprego. Entenda o padrão deles e <strong>saiba como se defender.</strong>
+            </p>
+            <div class="hero-cta-group">
+                <button class="cta-button" onclick="document.getElementById('alerta').scrollIntoView()">
                     Aprender a me Proteger
                 </button>
-                
-                <!-- O ATALHO EM FORMATO DE LINK/CARD MINIMALISTA -->
-                <div onclick="document.getElementById('dica-fundamental').scrollIntoView({behavior: 'smooth'})" 
-                     style="width: 100%; padding: 14px; background: rgba(255, 215, 10, 0.03); border: 1px dashed rgba(255, 215, 10, 0.3); border-radius: 8px; cursor: pointer; transition: all 0.3s ease; text-align: center;"
-                     onmouseover="this.style.background='rgba(255, 215, 10, 0.08)'; this.style.borderColor='var(--accent-yellow)';"
-                     onmouseout="this.style.background='rgba(255, 215, 10, 0.03)'; this.style.borderColor='rgba(255, 215, 10, 0.3)';">
-                    
-                    <span style="color: var(--accent-yellow); font-weight: 700; font-size: 15px; display: block; line-height: 1.4; margin-bottom: 4px;">
-                        🎯 Sem tempo para ler? Veja aqui apenas uma dica que te coloca no controle da situação
-                    </span>
-                    
-                    <span style="color: var(--text-secondary); font-size: 12px; font-weight: 500; opacity: 0.8;">
-                        (Leitura de menos de um minuto)
-                    </span>
-                </div>
+                <span class="hero-note">Leitura de 3 minutos que pode salvar sua reputação.</span>
             </div>
+        </div>
     </section>
 
     <!-- Alerta Real -->
     <section id="alerta" class="alerta-real section">
         <div class="container">
-            <h2 class="reveal">
+            <h2>
                 <span class="mark-yellow">⚠️ ALERTA REAL</span>
                 <br>
                 Isso não é só golpe financeiro
             </h2>
-            <p class="reveal">
+            <p>
                 Se você cair em um golpe de chantagem, não estamos falando apenas de perder dinheiro.
                 Estamos falando de ameaças sérias à sua vida, privacidade e relacionamentos.
             </p>
 
             <div class="alert-list">
-                <div class="alert-item reveal">
+                <div class="alert-item">
                     <h3>🚨 Exposição Íntima</h3>
                     <p>Fotos ou vídeos podem ser compartilhados publicamente, para sua família e colegas de trabalho.</p>
                 </div>
-                <div class="alert-item reveal">
+                <div class="alert-item">
                     <h3>💔 Destruição de Relacionamentos</h3>
                     <p>Golpistas enviam conteúdo para seus contatos, destruindo sua reputação e relacionamentos.</p>
                 </div>
-                <div class="alert-item reveal">
+                <div class="alert-item">
                     <h3>🔲 Chantagem Contínua</h3>
                     <p>Mesmo após pagar, ameaças continuam. O "jogo" nunca termina para o criminoso.</p>
                 </div>
-                <div class="alert-item reveal">
+                <div class="alert-item">
                     <h3>😰 Trauma Psicológico</h3>
                     <p>Ansiedade, depressão e transtorno do estresse pós-traumático são consequências reais.</p>
                 </div>
-                <div class="alert-item reveal">
+                <div class="alert-item">
                     <h3>👥 Roubo de Identidade</h3>
                     <p>Dados pessoais podem ser usados para abrir contas em seu nome ou fraudar outras pessoas.</p>
                 </div>
-                <div class="alert-item reveal">
+                <div class="alert-item">
                     <h3>⚖️ Consequências Legais</h3>
                     <p>Em alguns casos, vítimas também podem ser responsabilizadas legalmente pelos conteúdos.</p>
                 </div>
@@ -1037,41 +1011,41 @@ Put your HTML text herea<!DOCTYPE html>
     <!-- Como Proteger - Telegram -->
     <section id="proteger" class="proteger section">
         <div class="container">
-            <h2 class="reveal">
+            <h2>
                 🔐 Como se Proteger
                 <br>
                 <span class="highlight">Telegram é Sua Melhor Ferramenta</span>
             </h2>
-            <p class="reveal">
+            <p>
                 O Telegram oferece anonimato real e criptografia. Aqui está como usar corretamente para se proteger.
             </p>
 
             <div class="steps">
-                <div class="step reveal" data-step="1">
+                <div class="step" data-step="1">
                     <h3>Acesse as Configurações</h3>
                     <p>
                         Abra o menu do seu Telegram e vá até as configurações (ícone de engrenagem). É aqui que começa a sua proteção.
                     </p>
-                    <img src="images/telegram1.jpg" alt="Acessar configurações do Telegram">
+                    <img src="images/telegram1.jpg" alt="Acessar configurações do Telegram" style="width: 100%; margin-top: 16px; border-radius: 8px; box-shadow: 0 5px 15px rgba(255, 215, 10, 0.2); border: 1px solid var(--border-color);">
                 </div>
 
-                <div class="step reveal" data-step="2">
+                <div class="step" data-step="2">
                     <h3>Privacidade e Segurança</h3>
                     <p>
                         Dentro do menu de configurações, procure pela opção <strong>Privacy and Security</strong> (Privacidade e Segurança).
                     </p>
-                    <img src="images/telegram2.jpg" alt="Menu Privacy and Security">
+                    <img src="images/telegram2.jpg" alt="Menu Privacy and Security" style="width: 100%; margin-top: 16px; border-radius: 8px; box-shadow: 0 5px 15px rgba(255, 215, 10, 0.2); border: 1px solid var(--border-color);">
                 </div>
 
-                <div class="step reveal" data-step="3">
+                <div class="step" data-step="3">
                     <h3>O Modo "Fantasma"</h3>
                     <p>
                         Configure as opções vitais como Telefone, Visto por Último (Last Seen) e Fotos de Perfil para <strong>"Nobody" (Ninguém)</strong>. Isso garante seu anonimato total.
                     </p>
-                    <img src="images/telegram3.jpg" alt="Lista de configurações de privacidade">
+                    <img src="images/telegram3.jpg" alt="Lista de configurações de privacidade" style="width: 100%; margin-top: 16px; border-radius: 8px; box-shadow: 0 5px 15px rgba(255, 215, 10, 0.2); border: 1px solid var(--border-color);">
                 </div>
 
-                <div class="step reveal" data-step="4">
+                <div class="step" data-step="4">
                     <h3>Crie um Username <br><span style="color: #ff6b6b; font-size: 14px;">(NUNCA passe seu telefone)</span></h3>
                     <p>
                         Nunca forneça seu número de telefone real. Em vez disso, crie um <strong>@username</strong> nas configurações. 
@@ -1079,7 +1053,7 @@ Put your HTML text herea<!DOCTYPE html>
                     </p>
                 </div>
 
-                <div class="step reveal" data-step="5">
+                <div class="step" data-step="5">
                     <h3>NÃO adicione como Contato</h3>
                     <p>
                         Nunca salve a pessoa na sua agenda ou nos "Contatos" do Telegram. O aplicativo trata contatos salvos como pessoas "próximas" e, 
@@ -1087,7 +1061,7 @@ Put your HTML text herea<!DOCTYPE html>
                     </p>
                 </div>
 
-                <div class="step reveal" data-step="6">
+                <div class="step" data-step="6">
                     <h3>Desative a Sincronização</h3>
                     <p>
                         Nas configurações de Privacidade e Segurança, procure por "Data Settings" e <strong>desative a sincronização automática de contatos</strong>. 
@@ -1096,90 +1070,90 @@ Put your HTML text herea<!DOCTYPE html>
                 </div>
             </div>
 
-            <h3 class="reveal" style="margin-top: clamp(30px, 6vw, 45px); font-size: 24px; margin-bottom: 20px; text-align: center; color: var(--accent-yellow);">🔒 Entenda Cada Configuração de Privacidade</h3>
-            <p class="reveal" style="text-align: center; font-size: 17px; color: var(--text-secondary); margin-bottom: 30px;">
+            <h3 style="margin-top: clamp(30px, 8vw, 60px); font-size: 24px; margin-bottom: 30px; text-align: center; color: var(--accent-yellow);">🔒 Entenda Cada Configuração de Privacidade</h3>
+            <p style="text-align: center; font-size: 17px; color: var(--text-secondary); margin-bottom: 40px;">
                 Aqui estão TODAS as opções de privacidade do Telegram e por que você deve mudar cada uma delas:
             </p>
 
             <div class="privacy-configs">
-                <div class="privacy-card reveal">
+                <div class="privacy-card">
                     <h4>📱 Phone Number (Número de Telefone)</h4>
                     <p class="config-current"><strong>Padrão:</strong> Everybody (Visível para todos)</p>
                     <p class="config-should"><strong>MUDE PARA:</strong> Nobody (Ninguém)</p>
                     <p class="config-why"><strong>Por quê:</strong> Se alguém souber seu número de telefone, consegue encontrá-lo no Telegram. Golpistas frequentemente tentam encontrar suas contas por número.</p>
                 </div>
 
-                <div class="privacy-card reveal">
+                <div class="privacy-card">
                     <h4>⏰ Last Seen & Online (Último Acesso e Online)</h4>
                     <p class="config-current"><strong>Padrão:</strong> Everybody (Visível para todos)</p>
                     <p class="config-should"><strong>MUDE PARA:</strong> Nobody (Ninguém)</p>
                     <p class="config-why"><strong>Por quê:</strong> Não deixe que estranhos saibam quando você está online. Golpistas usam isso para saber quando você está disponível e mais vulnerável.</p>
                 </div>
 
-                <div class="privacy-card reveal">
+                <div class="privacy-card">
                     <h4>👥 Groups & Channels (Grupos e Canais)</h4>
                     <p class="config-current"><strong>Padrão:</strong> Everybody (Visível para todos)</p>
                     <p class="config-should"><strong>MUDE PARA:</strong> Nobody (Ninguém)</p>
                     <p class="config-why"><strong>Por quê:</strong> Seus grupos definem seus interesses. Se alguém sabe em quais grupos você está, consegue aprender coisas sobre você para construir uma história falsa mais convincente.</p>
                 </div>
 
-                <div class="privacy-card reveal">
+                <div class="privacy-card">
                     <h4>☎️ Calls (Chamadas)</h4>
                     <p class="config-current"><strong>Padrão:</strong> Everybody (Visível para todos)</p>
                     <p class="config-should"><strong>MUDE PARA:</strong> Nobody ou My Contacts apenas (Ninguém ou apenas Meus Contatos)</p>
                     <p class="config-why"><strong>Por quê:</strong> Não deixe desconhecidos fazer chamadas de vídeo para você. Golpistas podem tentar forçar videochamadas indesejadas.</p>
                 </div>
 
-                <div class="privacy-card reveal">
+                <div class="privacy-card">
                     <h4>🖼️ Profile Photos (Fotos de Perfil)</h4>
                     <p class="config-current"><strong>Padrão:</strong> Everybody (Visível para todos)</p>
                     <p class="config-should"><strong>MUDE PARA:</strong> Nobody (Ninguém) ou My Contacts (Meus Contatos)</p>
                     <p class="config-why"><strong>Por quê:</strong> Se não tiver foto de perfil, cria mais anonimato. Ou use uma foto que não seja sua, nunca sua face real.</p>
                 </div>
 
-                <div class="privacy-card reveal">
+                <div class="privacy-card">
                     <h4>📝 Bio (Biografia)</h4>
                     <p class="config-current"><strong>Padrão:</strong> Everybody (Visível para todos)</p>
                     <p class="config-should"><strong>MUDE PARA:</strong> Nobody (Ninguém) ou My Contacts (Meus Contatos)</p>
                     <p class="config-why"><strong>Por quê:</strong> Sua bio pode revelar informações sobre você (profissão, localização, interesses). Deixe em branco ou anônimo.</p>
                 </div>
 
-                <div class="privacy-card reveal">
+                <div class="privacy-card">
                     <h4>🎁 Gifts (Presentes)</h4>
                     <p class="config-current"><strong>Padrão:</strong> Everybody (Visível para todos)</p>
                     <p class="config-should"><strong>MUDE PARA:</strong> Nobody (Ninguém) ou My Contacts (Meus Contatos)</p>
                     <p class="config-why"><strong>Por quê:</strong> Evita que estranhos enviem presentes que possam rastreá-lo ou coletar informações sobre você.</p>
                 </div>
 
-                <div class="privacy-card reveal">
+                <div class="privacy-card">
                     <h4>🎂 Birthday (Aniversário)</h4>
                     <p class="config-current"><strong>Padrão:</strong> My Contacts (Meus Contatos)</p>
                     <p class="config-should"><strong>MUDE PARA:</strong> Nobody (Ninguém)</p>
                     <p class="config-why"><strong>Por quê:</strong> Não divulgue data de aniversário. Golpistas usam isso como "prova de conexão" ("Lembrei seu aniversário! 🎉") para ganhar sua confiança.</p>
                 </div>
 
-                <div class="privacy-card reveal">
+                <div class="privacy-card">
                     <h4>🎵 Saved Music (Música Salva)</h4>
                     <p class="config-current"><strong>Padrão:</strong> Everybody (Visível para todos)</p>
                     <p class="config-should"><strong>MUDE PARA:</strong> Nobody (Ninguém) ou My Contacts (Meus Contatos)</p>
                     <p class="config-why"><strong>Por quê:</strong> Suas preferências musicais revelam coisas sobre você. Mantenha privado.</p>
                 </div>
 
-                <div class="privacy-card reveal">
+                <div class="privacy-card">
                     <h4>↩️ Forwarded Messages (Mensagens Reenviadas)</h4>
                     <p class="config-current"><strong>Padrão:</strong> Everybody (Visível para todos)</p>
                     <p class="config-should"><strong>MUDE PARA:</strong> Nobody (Ninguém) ou My Contacts (Meus Contatos)</p>
                     <p class="config-why"><strong>Por quê:</strong> Não deixe que estranhos vejam quem você reencaminha mensagens. Pode revelar seu círculo social.</p>
                 </div>
 
-                <div class="privacy-card reveal">
+                <div class="privacy-card">
                     <h4>🎤 Voice Messages (Mensagens de Voz)</h4>
                     <p class="config-current"><strong>Padrão:</strong> Everybody (Visível para todos)</p>
                     <p class="config-should"><strong>MUDE PARA:</strong> Nobody (Ninguém) ou My Contacts (Meus Contatos)</p>
                     <p class="config-why"><strong>Por quê:</strong> Bloqueie mensagens de voz de desconhecidos. Golpistas às vezes usam áudio para você se acostumar com suas vozes (construção de confiança).</p>
                 </div>
 
-                <div class="privacy-card reveal privacy-highlight">
+                <div class="privacy-card privacy-highlight">
                     <h4>⚠️ O Resumo da Regra de Ouro</h4>
                     <p class="config-should"><strong>REGRA:</strong> Se não é informação que você quer que um estranho saiba, mude para "Nobody" (Ninguém).</p>
                     <p class="config-why"><strong>Resultado final:</strong> Você fica completamente anônimo. Ninguém consegue encontrá-lo ou aprender nada sobre você sem comunicação direta já existente.</p>
@@ -1191,17 +1165,17 @@ Put your HTML text herea<!DOCTYPE html>
     <!-- Nunca Faça Isso -->
     <section id="nunca" class="nunca-faca section">
         <div class="container">
-            <h2 class="reveal">
+            <h2>
                 <span class="mark-yellow">🚫 NUNCA FAÇA ISSO</span>
                 <br>
                 Comportamentos que Os Golpistas Usam Para Chantageá-lo
             </h2>
-            <p class="reveal">
+            <p>
                 Evite estes erros crus que colocam você em risco imediato.
             </p>
 
             <div class="nunca-list">
-                <div class="nunca-item reveal">
+                <div class="nunca-item">
                     <span class="nunca-icon">📱</span>
                     <h3>WhatsApp</h3>
                     <p>
@@ -1210,7 +1184,7 @@ Put your HTML text herea<!DOCTYPE html>
                     </p>
                 </div>
 
-                <div class="nunca-item reveal">
+                <div class="nunca-item">
                     <span class="nunca-icon">💳</span>
                     <h3>PIX ou Dinheiro</h3>
                     <p>
@@ -1219,7 +1193,7 @@ Put your HTML text herea<!DOCTYPE html>
                     </p>
                 </div>
 
-                <div class="nunca-item reveal">
+                <div class="nunca-item">
                     <span class="nunca-icon">😊</span>
                     <h3>Foto do Seu Rosto</h3>
                     <p>
@@ -1228,7 +1202,7 @@ Put your HTML text herea<!DOCTYPE html>
                     </p>
                 </div>
 
-                <div class="nunca-item reveal">
+                <div class="nunca-item">
                     <span class="nunca-icon">🎥</span>
                     <h3>Videochamada "Inocente"</h3>
                     <p>
@@ -1236,7 +1210,7 @@ Put your HTML text herea<!DOCTYPE html>
                     </p>
                 </div>
 
-                <div class="nunca-item reveal">
+                <div class="nunca-item">
                     <span class="nunca-icon">💬</span>
                     <h3>Informações Pessoais</h3>
                     <p>
@@ -1245,7 +1219,7 @@ Put your HTML text herea<!DOCTYPE html>
                     </p>
                 </div>
 
-                <div class="nunca-item reveal">
+                <div class="nunca-item">
                     <span class="nunca-icon">❤️</span>
                     <h3>Pagar Chantagem</h3>
                     <p>
@@ -1260,17 +1234,17 @@ Put your HTML text herea<!DOCTYPE html>
     <!-- Como Funcionam os Golpes -->
     <section class="como-funcionam section">
         <div class="container">
-            <h2 class="reveal">
+            <h2>
                 🎭 Como os Golpes Funcionam
                 <br>
                 <span class="highlight">Entenda a Psicologia da Manipulação</span>
             </h2>
-            <p class="reveal">
+            <p>
                 Golpistas não são amadores. Eles usam técnicas psicológicas testadas para criar conexão emocional.
             </p>
 
             <div class="pattern-list">
-                <div class="pattern reveal">
+                <div class="pattern">
                     <span class="pattern-number">1</span>
                     <h3>A Conexão Falsa</h3>
                     <p>
@@ -1282,7 +1256,7 @@ Put your HTML text herea<!DOCTYPE html>
                     </p>
                 </div>
 
-                <div class="pattern reveal">
+                <div class="pattern">
                     <span class="pattern-number">2</span>
                     <h3>A Construção de Intimidade</h3>
                     <p>
@@ -1295,7 +1269,7 @@ Put your HTML text herea<!DOCTYPE html>
                     </p>
                 </div>
 
-                <div class="pattern reveal">
+                <div class="pattern">
                     <span class="pattern-number">3</span>
                     <h3>A Coleta de Dados Disfarçada</h3>
                     <p>
@@ -1307,7 +1281,7 @@ Put your HTML text herea<!DOCTYPE html>
                     </p>
                 </div>
 
-                <div class="pattern reveal">
+                <div class="pattern">
                     <span class="pattern-number">4</span>
                     <h3>A Urgência Artificial e Ultimatos</h3>
                     <p>
@@ -1319,7 +1293,7 @@ Put your HTML text herea<!DOCTYPE html>
                     </p>
                 </div>
 
-                <div class="pattern reveal">
+                <div class="pattern">
                     <span class="pattern-number">5</span>
                     <h3>A Chantagem</h3>
                     <p>
@@ -1331,7 +1305,7 @@ Put your HTML text herea<!DOCTYPE html>
                     </p>
                 </div>
 
-                <div class="pattern reveal">
+                <div class="pattern">
                     <span class="pattern-number">6</span>
                     <h3>O Ciclo Interminável</h3>
                     <p>
@@ -1350,17 +1324,17 @@ Put your HTML text herea<!DOCTYPE html>
     <!-- Sinais de Golpe -->
     <section id="sinais" class="sinais section">
         <div class="container">
-            <h2 class="reveal">
+            <h2>
                 🚩 Sinais de Golpe
                 <br>
                 <span class="highlight">Reconheça Antes de Cair</span>
             </h2>
-            <p class="reveal">
+            <p>
                 Estes são os sinais reais que você está com um golpista. Qualquer um desses deve soar o alarme.
             </p>
 
             <div class="sinais-grid">
-                <div class="sinal reveal">
+                <div class="sinal">
                     <div class="sinal-header">
                         <span class="sinal-icon">🎭</span>
                         <h3>Perfil "Perfeito" Demais</h3>
@@ -1371,7 +1345,7 @@ Put your HTML text herea<!DOCTYPE html>
                     </p>
                 </div>
 
-                <div class="sinal reveal">
+                <div class="sinal">
                     <div class="sinal-header">
                         <span class="sinal-icon">⚡</span>
                         <h3>Ama Você Muito Rápido</h3>
@@ -1381,7 +1355,7 @@ Put your HTML text herea<!DOCTYPE html>
                     </p>
                 </div>
 
-                <div class="sinal reveal">
+                <div class="sinal">
                     <div class="sinal-header">
                         <span class="sinal-icon">🎭</span>
                         <h3>Armadilha da Videochamada</h3>
@@ -1391,7 +1365,7 @@ Put your HTML text herea<!DOCTYPE html>
                     </p>
                 </div>
 
-                <div class="sinal reveal">
+                <div class="sinal">
                     <div class="sinal-header">
                         <span class="sinal-icon">😰</span>
                         <h3>Histórias Dramáticas</h3>
@@ -1402,7 +1376,7 @@ Put your HTML text herea<!DOCTYPE html>
                     </p>
                 </div>
 
-                <div class="sinal reveal">
+                <div class="sinal">
                     <div class="sinal-header">
                         <span class="sinal-icon">💰</span>
                         <h3>Pede Dinheiro Rápido</h3>
@@ -1412,7 +1386,7 @@ Put your HTML text herea<!DOCTYPE html>
                     </p>
                 </div>
 
-                <div class="sinal reveal">
+                <div class="sinal">
                     <div class="sinal-header">
                         <span class="sinal-icon">👁️</span>
                         <h3>Busca Fotos Suas</h3>
@@ -1422,7 +1396,7 @@ Put your HTML text herea<!DOCTYPE html>
                     </p>
                 </div>
 
-                <div class="sinal reveal">
+                <div class="sinal">
                     <div class="sinal-header">
                         <span class="sinal-icon">⏳</span>
                         <h3>Pressa e Chantagem Emocional</h3>
@@ -1432,7 +1406,7 @@ Put your HTML text herea<!DOCTYPE html>
                     </p>
                 </div>
 
-                <div class="sinal reveal">
+                <div class="sinal">
                     <div class="sinal-header">
                         <span class="sinal-icon">🔍</span>
                         <h3>Quer Conhecer Sua Vida</h3>
@@ -1446,98 +1420,40 @@ Put your HTML text herea<!DOCTYPE html>
     </section>
 
     <!-- Como Investigar -->
-     <!-- DICA DE OURO EM DESTAQUE MÁXIMO -->
-    <!-- DICA DE OURO EM DESTAQUE MÁXIMO -->
-    <section id="dica-fundamental" class="section" style="background: #111a36; border-top: 3px solid var(--accent-yellow); border-bottom: 3px solid var(--accent-yellow);">
-        <div class="container">
-            <div class="reveal" style="background: linear-gradient(135deg, rgba(255, 215, 10, 0.1) 0%, rgba(255, 77, 77, 0.05) 100%); border: 3px solid var(--accent-yellow); padding: clamp(20px, 5vw, 40px); border-radius: 16px; box-shadow: 0 0 30px rgba(255, 215, 10, 0.15);">
-                
-                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;">
-                    <span style="font-size: 32px;">👑</span>
-                    <h2 style="font-size: clamp(24px, 4vw, 36px); font-weight: 900; color: var(--accent-yellow); margin: 0; line-height: 1.2;">
-                        A Dica Fundamental para não cair em Golpes
-                    </h2>
-                </div>
-                
-                <p style="font-size: 18px; color: var(--text-primary); margin-bottom: 24px; font-weight: 600; line-height: 1.6;">
-                    Caso você não tenha identificado se é golpista, ou se você já está na conversa e não quis parar para pensar sobre isso agora, essa fala abaixo é <strong>fundamental</strong>. 
-                    <br><span style="color: #ff6b6b;">Apenas copie e mande isso antes de passar seu número, @user ou foto:</span>
-                </p>
-
-                <!-- Bloco de Copiar (COM A SUA ALTERAÇÃO NOVA) -->
-                <div style="background: var(--bg-main); padding: 24px; border-radius: 8px; border-left: 6px solid var(--accent-yellow); margin-bottom: 28px; box-shadow: inset 0 2px 8px rgba(0,0,0,0.5);">
-                    <p style="font-size: clamp(16px, 2.5vw, 19px); color: var(--text-primary); font-style: italic; line-height: 1.8; margin: 0;">
-                        "Por questão de segurança para nos dois, eu não compartilho meu número de telefone, não mostro o rosto em câmera/fotos e mantenho meu perfil totalmente anônimo. Eu conheço muito sobre golpes na internet e prefiro que a gente crie um laço real e confie um no outro antes de qualquer exposição. Combinado?"
-                    </p>
-                </div>
-
-                <h3 style="color: #ff4d4d; font-size: 20px; margin-bottom: 16px; font-weight: 800;">
-                    ⚡ O Teste Prático (A reação deles entrega o golpe):
-                </h3>
-                
-                <p style="color: var(--text-secondary); font-size: 16px; margin-bottom: 16px; line-height: 1.7;">
-                    Esse teste foi feito na prática. Quando você manda essa mensagem, 100% dos golpistas reagem de duas formas porque você quebra o script deles:
-                </p>
-                
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-                    <div style="background: rgba(10, 14, 39, 0.5); padding: 20px; border-radius: 8px; border: 1px solid rgba(255, 77, 77, 0.2);">
-                        <h4 style="color: #ff6b6b; margin-bottom: 8px; font-size: 17px; font-weight: 700;">❌ Para de Responder</h4>
-                        <p style="color: var(--text-secondary); font-size: 15px; margin: 0; line-height: 1.6;">
-                            A pessoa simplesmente some do nada. Como o objetivo do golpista é dinheiro rápido e chantagem fácil, se ele vê que você não vai ceder e sabe se proteger, ele desistem para não perder tempo.
-                        </p>
-                    </div>
-                    
-                    <div style="background: rgba(10, 14, 39, 0.5); padding: 20px; border-radius: 8px; border: 1px solid rgba(255, 77, 77, 0.2);">
-                        <h4 style="color: #ff6b6b; margin-bottom: 8px; font-size: 17px; font-weight: 700;">🎭 Finge que está Bravo</h4>
-                        <p style="color: var(--text-secondary); font-size: 15px; margin: 0; line-height: 1.6;">
-                            Eles fingem que ficaram ofendidos, bravos ou dizem que "não era o que esperavam". Não caia nessa: nós sabemos que isso são apenas argumentos de golpista para tentar fazer você se sentir culpado e te forçar a ceder.
-                        </p>
-                    </div>
-                </div>
-
-                <div style="margin-top: 24px; background: rgba(81, 207, 102, 0.1); padding: 16px; border-radius: 8px; border-left: 4px solid #51cf66;">
-                    <p style="color: #51cf66; font-size: 15px; font-weight: 700; margin: 0; line-height: 1.6;">
-                        🟢 SE A PERSONA SUMIU OU FICOU BRAVA, É GOLPE. Uma pessoa real e bem-intencionada vai super respeitar sua decisão, vai achar maduro e vai continuar conversando contigo numa boa para criar um laço real.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </section>
     <section id="investigar" class="investigar section">
         <div class="container">
-            <h2 class="reveal">
+            <h2>
                 🕵️‍♂️ Dica de Ouro: Investigue as Fotos
                 <br>
                 <span class="highlight">A Busca Reversa é sua Aliada</span>
             </h2>
-            <p class="reveal">
+            <p>
                 Golpistas raramente usam fotos próprias. Eles pegam imagens de modelos, influenciadores ou pessoas comuns na internet para parecerem mais convincentes. Se recebeu uma foto e está desconfiado, use essas ferramentas para descobrir se aquela mesma imagem (ou rosto) já existe em outros sites.
             </p>
 
             <div class="tools-grid">
-                <a href="https://images.google.com" target="_blank" rel="noopener noreferrer" class="tool-card reveal">
+                <a href="https://images.google.com" target="_blank" rel="noopener noreferrer" class="tool-card">
                     <div class="tool-icon">🔍</div>
                     <h3>Google Imagens</h3>
                     <p>O mais básico e conhecido. É útil para encontrar fotos muito famosas, tiradas de bancos de imagens gratuitos ou de perfis muito populares.</p>
                     <div class="tool-link">Acessar Site ➔</div>
                 </a>
 
-                <a href="https://yandex.com/images" target="_blank" rel="noopener noreferrer" class="tool-card reveal">
+                <a href="https://yandex.com/images" target="_blank" rel="noopener noreferrer" class="tool-card">
                     <div class="tool-icon">🌐</div>
                     <h3>Yandex Images</h3>
                     <p>O motor de busca russo. Para reconhecimento facial e busca de fotos roubadas, costuma ser <strong>muito superior e mais afiado</strong> que o Google.</p>
                     <div class="tool-link">Acessar Site ➔</div>
                 </a>
 
-                <a href="https://facecheck.id/" target="_blank" rel="noopener noreferrer" class="tool-card reveal">
+                <a href="https://facecheck.id/" target="_blank" rel="noopener noreferrer" class="tool-card">
                     <div class="tool-icon">👤</div>
                     <h3>FaceCheck.ID</h3>
                     <p>Especializado em buscar rostos. Ele varre a internet para tentar encontrar a mesma pessoa em vídeos, outras redes sociais ou sites de notícias.</p>
                     <div class="tool-link">Acessar Site ➔</div>
                 </a>
 
-                <a href="https://pimeyes.com" target="_blank" rel="noopener noreferrer" class="tool-card reveal">
+                <a href="https://pimeyes.com" target="_blank" rel="noopener noreferrer" class="tool-card">
                     <div class="tool-icon">👁️</div>
                     <h3>PimEyes</h3>
                     <p>Uma das ferramentas de reconhecimento facial mais potentes (e assustadoras) do mundo. Consegue achar um rosto mesmo em lugares muito obscuros da internet.</p>
@@ -1545,7 +1461,7 @@ Put your HTML text herea<!DOCTYPE html>
                 </a>
             </div>
 
-            <div class="reveal" style="background: rgba(255, 215, 10, 0.05); border-left: 4px solid var(--accent-yellow); padding: 24px; border-radius: 8px; margin-top: 40px;">
+            <div style="background: rgba(255, 215, 10, 0.05); border-left: 4px solid var(--accent-yellow); padding: 24px; border-radius: 8px; margin-top: 40px; animation: slideUp 0.8s ease-out;">
                 <h3 style="color: var(--accent-yellow); font-size: 18px; margin-bottom: 12px; font-weight: 700;">⚠️ Cuidado com a Falsa Sensação de Segurança</h3>
                 <p style="color: var(--text-secondary); font-size: 16px; margin: 0;">
                     <strong>Não é porque você não encontrou a foto que a pessoa é real.</strong> Golpistas frequentemente manipulam as imagens (espelham, cortam, alteram o brilho ou usam Inteligência Artificial) para deixá-las indetectáveis pelos buscadores.<br><br>
@@ -1558,45 +1474,45 @@ Put your HTML text herea<!DOCTYPE html>
     <!-- Caí no Golpe, E agora? -->
     <section id="emergencia" class="emergencia section">
         <div class="container">
-            <h2 class="reveal">
+            <h2>
                 <span style="color: #ff4d4d;">🚨 Caí no Golpe. E agora?</span>
                 <br>
                 Não entre em desespero. Leia isto.
             </h2>
-            <p class="reveal">
+            <p>
                 O pânico é a principal arma do golpista. Se você respirar e agir com lógica, o jogo vira contra eles. Siga estes passos imediatamente.
             </p>
 
             <div class="emergency-grid">
-                <div class="emergency-card emergency-highlight reveal">
+                <div class="emergency-card emergency-highlight">
                     <h3>O Grande Segredo: É (Quase Sempre) um Blefe</h3>
                     <p>
                         Até o momento da chantagem, o golpista está anônimo e seguro. <strong>Se ele realmente enviar fotos/vídeos íntimos para alguém, ele comete um crime rastreável e deixa provas.</strong> Como o objetivo deles é apenas dinheiro fácil, eles <em>não querem ter esse trabalho ou correr esse risco</em>. Na esmagadora maioria das vezes, se você não pagar e sumir, eles não fazem nada e partem para a próxima vítima.
                     </p>
                 </div>
 
-                <div class="emergency-card reveal">
+                <div class="emergency-card">
                     <h3>1. Bloqueio Imediato</h3>
                     <p>
                         Não discuta, não implore, não tente se justificar e, principalmente, <strong>nunca pague</strong>. O pagamento apenas avisa ao criminoso que você tem dinheiro e medo. Bloqueie a pessoa em todas as redes imediatamente. Ao fechar a porta, o golpe perde a força.
                     </p>
                 </div>
 
-                <div class="emergency-card reveal">
+                <div class="emergency-card">
                     <h3>2. A Tática do PIX (Rastreio)</h3>
                     <p>
                         Se o golpista pediu dinheiro via PIX (passando um número de telefone, CPF ou e-mail), vá ao seu aplicativo do banco, cole a chave e <strong>simule uma transferência (sem confirmar)</strong>. A tela mostrará o nome real da pessoa ou do "laranja" e a instituição bancária. Tire print disso.
                     </p>
                 </div>
 
-                <div class="emergency-card reveal">
+                <div class="emergency-card">
                     <h3>3. Busca Social Rápida</h3>
                     <p>
                         Pegue o número de telefone usado pelo golpista e jogue na barra de pesquisa do Facebook, Google ou Instagram. Muitas vezes, esses números estão atrelados a perfis antigos reais. Tire prints de tudo que encontrar.
                     </p>
                 </div>
 
-                <div class="emergency-card reveal">
+                <div class="emergency-card">
                     <h3>4. Faça o Boletim de Ocorrência</h3>
                     <p>
                         Reúna todos os prints (da conversa ameaçadora, do perfil, do número de telefone e da simulação do PIX). Faça um B.O. (Boletim de Ocorrência) na delegacia física mais próxima ou pela Delegacia Eletrônica do seu estado. Isso te resguarda legalmente.
@@ -1609,18 +1525,18 @@ Put your HTML text herea<!DOCTYPE html>
     <!-- CTA Final -->
     <section class="final-cta">
         <div class="container">
-            <h2 class="reveal">
+            <h2>
                 Proteja sua Dignidade.
                 <br>
                 <strong style="color: var(--accent-yellow);">Agora.</strong>
             </h2>
-            <p class="reveal">
+            <p>
                 Você não é estúpido se caiu em um golpe. Você é humano. Golpistas tentam dar golpes o dia todo e vão aprendendo a se disfarçar na base da repetição. Porém, quando você entende como funciona, percebe que o jeito que eles agem é muito repetitivo e até estúpido.
                 <br><br>
                 Mas agora você sabe. A proteção começa com essas ações simples.
             </p>
 
-            <div class="share-box reveal">
+            <div class="share-box">
                 <h3>Ajude a espalhar essa informação</h3>
                 <p>
                     Agora que você já entendeu, compartilhe nos locais que você frequenta (grupos de WhatsApp, fóruns, redes sociais). 
@@ -1683,22 +1599,31 @@ Put your HTML text herea<!DOCTYPE html>
             }
         });
 
-        // Intersection Observer para animações suaves (sem esconder blocos inteiros)
-        const reveal = () => {
-            const reveals = document.querySelectorAll('.reveal');
-            for (let i = 0; i < reveals.length; i++) {
-                const windowHeight = window.innerHeight;
-                const revealTop = reveals[i].getBoundingClientRect().top;
-                const revealPoint = 50;
-
-                if (revealTop < windowHeight - revealPoint) {
-                    reveals[i].classList.add('active');
-                }
-            }
+        // Intersection Observer para animações
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
         };
 
-        window.addEventListener('scroll', reveal);
-        window.addEventListener('load', reveal);
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('fade-in');
+            observer.observe(section);
+        });
+
+        // Animação para cards quando entram na viewport
+        const fadeInElements = document.querySelectorAll('.alert-item, .step, .nunca-item, .pattern, .sinal, .tool-card, .emergency-card, .share-box');
+        fadeInElements.forEach((element, index) => {
+            element.style.animationDelay = `${index * 0.1}s`;
+        });
 
         // Função de copiar link
         function copiarLink() {
